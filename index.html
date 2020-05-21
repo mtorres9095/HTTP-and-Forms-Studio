@@ -4,21 +4,30 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
-    window.addEventListener("load", function(){
-		let form = document.querySelector("form");
-         form.addEventListener("submit", function(event) {
-         let google = document.querySelector("input[name=engine]:checked");
-         let duckDuckGo = document.querySelector("input[name=engine]:checked");
-         let bing = document.querySelector("input[name=engine]:checked");
-         let ask = document.querySelector("input[name=engine]:checked");
-                //  if(teamName.value === "" || testDate.value === "" || rocketType.value === ""|| boosterCount.value ===" " || windRating.value === "") {
-            // alert("All fields are required!");
-            event.preventDefault();
-          }
-        });
+    function setSearchEngine(event){
+          console.log("test");
+
+
+        }
 
         // TODO: register the handler
-    });
+        window.addEventListener("load", setSearchEngine(event){
+		     let form = document.querySelector("form");
+         let action = document.querySelector("input[name=engine]:checked");
+         let actions = {
+           "Google": "https://www.google.com/search"
+           "DuckDuckGo": "https://duckduckgo.com/"
+           "Bing": "https://www.bing.com/search"
+           "Ask": "https://www.ask.com/web"
+
+          }
+
+
+       
+        })
+        }
+        
+   
 	</script>
 </head>
 
@@ -26,14 +35,29 @@
 
 	<form id="searchForm">
 	<!-- TODO: add form elements -->
-	Website:
-             <label></label><input type="text" name="request" value="q"/></label>
-             <label>Google<input type="radio" iname="engine" value="q"/></label>
-             <label>DuckDuckGo<input type="radio" name="engine" value="q"/></label>
-			 <label>Bing<input type="radio" name="engine" value="q"/></label>
-			 <label>Ask<input type="radio" name="engine" value="q"/></label>
-			 <button>Go!</button>
+  <!-- Website:     -->
+      <form action.setAttribute(actions) method="POST">
+             <label></label><input id="q" type="text" name="q" value=""/></label>
+             <label>Google<input  type="radio" name="engine"/></label>
+             <label>DuckDuckGo<input  type="radio" name="engine"/></label>
+			       <label>Bing<input type="radio" name="engine"/></label>
+			       <label>Ask<input type="radio" name="engine"/></label>
+			       <button>Go!</button>
 
 	</form>
+
+  <!-- URL;
+  if (engine === "Google"){
+    actionURL = "https://www.google.com/search"; 
+    } else if (engine === "DuckDuckGo"){
+       actionURL = "https://duckduckgo.com/"; 
+    } else if (engine === "Bing"){
+       actionURL = "https://www.bing.com/search"; 
+    } else if (engine === "Ask");
+       actionURL = "https://www.ask.com/web";
+          } -->
+
+
+
 
 </body>
